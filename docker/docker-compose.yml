@@ -9,7 +9,7 @@ services:
       - './etc/nginx/templates/:/etc/nginx/conf.d'
       - '../:/app'
       - './cerbot/conf:/etc/letsencrypt'
-      - './certbot/www:/var/www/certbot'
+      - './certbot/www:/var/www/'
     ports:
       - "80:80"
       - "443:443"
@@ -33,5 +33,5 @@ services:
     container_name: ${PROJECT_NAME:?err}_certbot
     volumes:
       - './cerbot/conf:/etc/letsencrypt'
-      - './certbot/www:/var/www/certbot'
-    command: certonly --webroot -w /var/www/certbot --force-renewal --email abcewffefwefwefwe@fwefwewfe.com -d gaynaumenko.ru --agree-tos
+      - './certbot/www:/var/www/'
+    command: certonly --webroot -w /var/www/ --force-renewal --email abcewffefwefwefwe@fwefwewfe.com -d gaynaumenko.ru --agree-tos
