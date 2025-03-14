@@ -34,4 +34,4 @@ services:
     volumes:
       - './cerbot/conf:/etc/letsencrypt'
       - './certbot/www:/var/www/certbot'
-    command: certonly --webroot -w /var/www/certbot --force-renewal --email abcewffefwefwefwe@fwefwewfe.com -d www.gaynaumenko.ru --agree-tos
+    command: certonly --webroot -w /var/www/certbot --force-renewal --email abcewffefwefwefwe@fwefwewfe.com -d gaynaumenko.ru --agree-tos
