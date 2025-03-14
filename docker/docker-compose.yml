@@ -1,0 +1,37 @@
+services:
+  nginx:
+    restart: always
+    build:
+      context: .
+      dockerfile: ./nginx.Dockerfile
+    container_name: ${PROJECT_NAME:?err}_nginx
+    volumes:
+      - './etc/nginx/templates/:/etc/nginx/conf.d'
+      - '../:/app'
+      - './cerbot/conf:/etc/letsencrypt'
+      - './certbot/www:/var/www/certbot'
+    ports:
+      - "80:80"
+      - "443:443"
+    links:
+      - node
+
+  node:
+    restart: always
+    build:
+      context: .
+      dockerfile: ./node.Dockerfile
+    container_name: ${PROJECT_NAME:?err}_node
+    volumes:
+      - '../:/app'
+    ports:
+      - "3000:3000"
+    command: bash -c 'cd ./app && npm install && npm run build && npm run start'
+
+  certbot:
+    image: certbot/certbot
+    container_name: ${PROJECT_NAME:?err}_certbot
+    volumes:
+      - './cerbot/conf:/etc/letsencrypt'
+      - './certbot/www:/var/www/certbot'
+    command: certonly --webroot -w /var/www/certbot --force-renewal --email abcewffefwefwefwe@fwefwewfe.com -d gaynaumenko.ru --agree-tos
