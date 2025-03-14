@@ -24,11 +24,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[url(/back.jpg)] bg-no-repeat bg-cover h-[100vh]`}
-      >
-        {children}
-      </body>
+    <head>
+      {/*<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96"/>*/}
+      {/*<link rel="icon" type="image/svg+xml" href="/favicon.svg"/>*/}
+      {/*<link rel="shortcut icon" href="/favicon.ico"/>*/}
+      {/*<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>*/}
+      {/*<link rel="manifest" href="/site.webmanifest"/>*/}
+    </head>
+    <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[url(/back3.jpg)] bg-no-repeat bg-cover bg-center h-[100vh]`}
+    >
+    {children}
+    </body>
     </html>
   );
 }
