@@ -2,8 +2,8 @@ import CarouselLeha from "@/app/carousel-leha";
 
 
 export default function Home() {
-    const gramots = ["/gramoti/1.jpg", "/gramoti/2.jpg", "/gramoti/3.jpg", "/gramoti/4.jpg", "/gramoti/5.jpg", "/gramoti/6.jpg", "/gramoti/7.jpg", "/gramoti/8.jpg"];
-    const imgs = [ "/4.jpg", "/5.jpg", "/6.jpg", "/7.jpg"];
+    const gramots = ["/gramoti/4.jpg", "/gramoti/5.jpg", "/gramoti/6.jpg", "/gramoti/7.jpg", "/gramoti/8.jpg"];
+    const imgs = [ "/1.jpg","/2.jpg","/3.jpg","/4.jpg", "/5.jpg", "/6.jpg", "/7.jpg"];
     return (
     <div className="flex justify-center items-center">
         <main className="p-12">
