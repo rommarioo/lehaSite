@@ -1,48 +1,57 @@
-"use client"
+
 import CarouselLeha from "@/app/carousel-leha";
-import {useState} from "react";
+import Image from "next/image";
+
 
 
 export default function Home() {
-    const gramots = ["/gramoti/4.jpg", "/gramoti/5.jpg", "/gramoti/6.jpg", "/gramoti/7.jpg", "/gramoti/8.jpg", "/gramoti/9.jpg"];
+    const gramots = [ "/gramoti/6.jpg", "/gramoti/7.jpg", "/gramoti/8.jpg", "/gramoti/9.jpg"];
     const imgs = [ "/1.jpg","/2.jpg","/3.jpg","/4.jpg", "/5.jpg", "/6.jpg", "/7.jpg", "/8.jpg"];
-    const [counter, setCounter] = useState(0);
+    const books = ["/books/1.jpg", "/books/2.jpg", "/books/3.jpg", "/books/4.jpg",]
+
 
     return (
     <div className="flex justify-center items-center">
-        <main className="p-12">
+        <main className="p-12 max-md:p-2 flex flex-col items-center">
             <div className={"flex flex-col items-center"}>
-                <h1 className={"text-6xl pt-2 flex justify-center items-center max-md:text-3xl text-center"}>Личная
+                <h1 className={"text-6xl pt-2 flex justify-center items-center font-bold text-center"}>Личная
                     страница</h1>
-                <h2 className={"text-5xl mt-8 font-bold text-center"} onClick={() => setCounter(counter + 1)}>Алексея Науменко</h2>
+                <h2 className={"text-5xl mt-14 font-bold text-center animate-bounce"}>Алексея Науменко <span
+                    className={"animate-pulse"}>(Лучшего программиста СПСа и трижды героя 1с)</span></h2>
             </div>
             <div>
-                <p className={"text-3xl mt-8 text-center"}>💪Мои достижения💪</p>
+                <p className={"text-3xl mt-8 text-center font-bold"}>💪Мои достижения💪</p>
             </div>
-            <div className={"p-2 mt-8"}>
+            <div className={"p-2 mt-8 w-fit flex justify-center"}>
                 <CarouselLeha imgs={gramots}/>
             </div>
             <div>
-                <p className={"text-3xl mt-8 text-center"}>✨Просто Я✨</p>
+                <p className={"text-3xl mt-8 text-center font-bold"}>✨Просто Я✨</p>
             </div>
             <div className={"p-2 mt-8"}>
                 <CarouselLeha imgs={imgs}/>
             </div>
             <div>
-                <p className={"text-3xl mt-8 text-center"}>✨Мои видео✨</p>
+                <p className={"text-3xl mt-8 text-center font-bold"}>✨Мои видео✨</p>
             </div>
             <div className={"p-2 mt-8"}>
-                <video autoPlay playsInline muted>
+                <video autoPlay playsInline muted loop>
                     <source src={"/video1.mp4"}/>
                 </video>
             </div>
-            {counter > 10 && (
-                <div className={"flex justify-center"}>
-                    <video autoPlay playsInline muted>
-                        <source src={"/video2.mp4"}/>
-                    </video>
-                </div>
-            )}
+            <div>
+                <p className={"text-3xl mt-8 text-center font-bold"}>✨Я с лучшим другом✨</p>
+            </div>
+            <div className={"p-2 mt-8"}>
+                <Image src={"/friends.jpg"} width={400} height={400} alt={""} className={"w-full"}/>
+            </div>
+            <div>
+                <p className={"text-3xl mt-8 text-center font-bold"}>✨Мои любимые книги✨</p>
+            </div>
+            <div className={"p-2 mt-8"}>
+                <CarouselLeha imgs={books}/>
+            </div>
+            <Image src={"/1s.png"} width={100} height={100} alt={""} className={"animate-spin fixed left-0 bottom-0"}/>
 
         </main>
 

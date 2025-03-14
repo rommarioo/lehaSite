@@ -17,6 +17,8 @@ export const metadata: Metadata = {
   description: "Личная страница Алексея Науменкова",
 };
 
+
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -36,7 +38,7 @@ export default function RootLayout({
 
     </head>
     <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[url(/back3.jpg)] bg-no-repeat bg-cover bg-bottom  `}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[url(/back3.jpg)] bg-no-repeat bg-cover bg-bottom`}
     >
     {children}
     </body>
