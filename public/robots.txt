@@ -1,0 +1,14 @@
+User-agent: *
+Disallow: /
+
+User-agent: Googlebot
+Disallow: /tmp/
+
+User-agent: Googlebot
+Disallow: /tmp/provider.html
+
+User-agent: *
+Disallow: /*.pdf$
+
+User-agent: Yandex
+Allow: /tmp/provider.html
