@@ -1,6 +1,7 @@
-
+"use client"
 import CarouselLeha from "@/app/carousel-leha";
 import Image from "next/image";
+import {useEffect, useRef} from "react";
 
 
 
@@ -8,11 +9,16 @@ export default function Home() {
     const gramots = [ "/gramoti/6.jpg", "/gramoti/7.jpg", "/gramoti/8.jpg", "/gramoti/9.jpg"];
     const imgs = [ "/1.jpg","/2.jpg","/3.jpg","/4.jpg", "/5.jpg", "/6.jpg", "/7.jpg", "/8.jpg"];
     const books = ["/books/1.jpg", "/books/2.jpg", "/books/3.jpg", "/books/4.jpg",]
-
-
+    const ref = useRef<HTMLAudioElement>(null);
+    useEffect(() => {
+        //eslint-disable-next-line
+        //@ts-ignore
+        ref.current.play()
+        },[])
     return (
     <div className="flex justify-center items-center">
         <main className="p-12 max-md:p-2 flex flex-col items-center">
+            <audio ref={ref} src="/lehaMusic.mp3"  loop></audio>
             <div className={"flex flex-col items-center"}>
                 <h1 className={"text-6xl pt-2 flex justify-center items-center font-bold text-center"}>Личная
                     страница</h1>

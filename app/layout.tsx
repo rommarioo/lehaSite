@@ -38,7 +38,7 @@ export default function RootLayout({
 
     </head>
     <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[url(/back3.jpg)] bg-no-repeat bg-cover bg-bottom`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[url(/back3.jpg)] bg-contain `}
     >
     {children}
     </body>
