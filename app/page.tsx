@@ -21,7 +21,7 @@ export default function Home() {
         },[])
     return (
     <div className="flex justify-center items-center">
-        <main className="p-12 max-md:p-2 flex flex-col items-center">
+        <main className="p-12 max-md:p-2 relative flex flex-col items-center">
             <audio ref={ref} src="/lehaMusic.mp3"  loop></audio>
             <div className={"flex flex-col items-center"}>
                 <h1 className={"text-6xl pt-2 flex justify-center items-center font-bold text-center"}>Личная
@@ -62,6 +62,7 @@ export default function Home() {
                 <CarouselLeha imgs={books}/>
             </div>
             <Image src={"/1s.png"} width={100} height={100} alt={""} className={"animate-spin fixed left-0 bottom-0"}/>
+            <Image src={"/reklama/uppers.png"} alt={""} className={" fixed right-1 bottom-0 max-md:w-[60%]"} width={450} height={80} />
 
         </main>
 
