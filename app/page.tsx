@@ -11,9 +11,13 @@ export default function Home() {
     const books = ["/books/1.jpg", "/books/2.jpg", "/books/3.jpg", "/books/4.jpg",]
     const ref = useRef<HTMLAudioElement>(null);
     useEffect(() => {
-        //eslint-disable-next-line
-        //@ts-ignore
-        ref.current.play()
+
+
+        document.addEventListener('click', () => {
+            //eslint-disable-next-line
+            //@ts-ignore
+            ref.current.play()
+            })
         },[])
     return (
     <div className="flex justify-center items-center">
